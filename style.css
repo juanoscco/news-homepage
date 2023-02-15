@@ -152,7 +152,7 @@ h5:hover{
 
 
 /** Only nav */
-@media(max-width:765px){
+/* @media(max-width:765px){
 
     nav{
         flex-direction: column;
@@ -164,9 +164,9 @@ h5:hover{
     nav ul.nav-list{
         gap: 0.7rem;
     }
-}
+} */
 /**End only nav  */
-@media (max-width: 375px) {
+@media (max-width: 768px) {
     body.opacity-dark{
         background-color: var(--grayish-blue);
         z-index: 1;
