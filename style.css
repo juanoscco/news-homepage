@@ -1,0 +1,232 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;700;800&display=swap');
+
+:root{
+    /* Colors */
+    --very-dark-blue: hsl(240, 100%, 5%);
+    --off-white: hsl(36, 100%, 99%);
+    --grayish-blue: hsl(233, 8%, 79%);
+    --dark-grayish-blue:hsl(236, 13%, 42%);
+
+    /* Other Colors */
+    --soft-orange: hsl(35, 77%, 62%);
+    --soft-red: hsl(5, 85%, 63%);
+    /* Weights */
+    --weight-400: 400;
+    --weight-700: 700;
+    --weight-800: 800;
+}
+
+body {
+    font-family: 'Inter', sans-serif;
+    font-size: 15px;
+}
+
+/** Components */
+
+/** Width for text paragraph */
+.width-text-84{
+    width: 80%;
+}
+
+/** Font title */
+.font-size-title{
+    font-size: 50px;
+    width: 80%;
+}
+
+
+
+/** Weights */
+.weight-700 {
+    font-weight: var(--weight-700);
+}
+
+.weight-400{
+    font-weight: var(--weight-400);
+}
+
+.weight-800{
+    font-weight: var(--weight-800);
+}
+
+/* Colors  */
+.soft-orange{
+    color: var(--soft-orange);
+}
+
+.soft-red{
+    background-color: var(--soft-red);
+}
+
+.very-dark-blue{
+    background-color:var(--very-dark-blue);
+}
+
+.dark-grayish-blue{
+    color: var(--dark-grayish-blue);
+}
+
+.grayish-blue {
+    color: var(--grayish-blue);
+    
+}
+.off-white {
+    color: var(--off-white);
+}
+/** End Components */
+
+/** NavBar response */
+ul.nav-list {
+    gap: 3rem;
+    list-style-type: none;
+}
+
+ul.nav-list li{
+    font-weight: var(--weight-700);
+    color: var(--dark-grayish-blue);
+}
+
+ul li:hover {
+    cursor: pointer;
+    color: var(--soft-orange);
+}
+
+nav .burger {
+    display: none;
+    cursor: pointer;
+}
+
+nav .burger .bar {
+    display: block;
+    width: 40px;
+    height: 3px;
+    margin: 5px auto;
+    -webkit-transition: all 0.2s ease-in-out;
+    transition: all 0.2s ease-in-out;
+    background-color: var(--very-dark-blue);
+}
+/** End navbar  */
+
+
+/** Main  */
+/** Section one */
+.image-response {
+    height: 250px;
+    width: 100%;
+    background: url("./assets/images/image-web-3-desktop.jpg");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+}
+.button {
+    border: none;
+    width: 200px;
+    height: 50px;
+    text-transform: uppercase;
+    letter-spacing: 5px;
+}
+/**end Section one  */
+
+/**section two */
+h5:hover{
+    cursor: pointer;
+    color: var(--soft-orange);
+}
+.section-bottom {
+    border-bottom: 1px solid var(--dark-grayish-blue);
+}
+/** end section two */
+
+/** Section three */
+.image-xs {
+    height: 120px;
+    width: 100px;
+    padding-bottom: 7.5px;
+}
+/**Font size span section three  */
+.font-size-span {
+    font-size: 30px;
+}
+/** End section three */
+
+
+
+/** Only nav */
+@media(max-width:765px){
+
+    nav{
+        flex-direction: column;
+        gap: 2rem;
+        align-items: center;
+        justify-content: center;
+    }
+
+    nav ul.nav-list{
+        gap: 0.7rem;
+    }
+}
+/**End only nav  */
+@media (max-width: 375px) {
+    body.opacity-dark{
+        background-color: var(--grayish-blue);
+        z-index: 1;
+    }
+
+    /** Main Response  */
+    .image-response {
+        background: url("./assets/images/image-web-3-mobile.jpg");
+        height: 350px;
+        width: 100%;
+        background-repeat: no-repeat;
+        background-position: center;
+        background-size: cover;
+        
+    }
+    /** End Main */
+    /** nabvar response */
+    nav {
+        flex-direction: row;
+    }
+    nav .burger {
+        display: block;
+    }
+
+    nav .burger.active .bar:nth-child(2){
+        opacity: 0;
+    }
+    nav .burger.active .bar:nth-child(1){
+        transform: translateY(8px) rotate(45deg);
+    }
+
+    nav .burger.active .bar:nth-child(3){
+        transform: translateY(-8px) rotate(-45deg);
+    }
+
+    nav ul.nav-list {
+        background-color: #fff;
+        position: fixed;
+        top: 0rem;
+        padding-top: 10rem;
+        right: -100%;
+        height: 100%;
+        width: 60%;
+        flex-direction: column;
+        justify-content: flex-start;
+        align-items: start;
+        gap: 1.5rem !important;
+        opacity: 0;
+        transition: 0.3s;
+    }
+
+    nav ul.nav-list li {
+        color: var(--very-dark-blue);
+        font-weight: var(--weight-700);
+    }
+
+    nav ul.nav-list.active {
+        opacity: 1;
+        right: 0;
+        z-index: 0;
+    }
+    /**End navbar  */
+}
